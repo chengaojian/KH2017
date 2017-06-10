@@ -109,16 +109,11 @@
 		04DED2E31EEB89360073D5A1 /* KH2017 */ = {
 			isa = PBXGroup;
 			children = (
-				04DED2E41EEB89360073D5A1 /* AppDelegate.h */,
-				04DED2E51EEB89360073D5A1 /* AppDelegate.m */,
-				04DED2E71EEB89360073D5A1 /* ViewController.h */,
-				04DED2E81EEB89360073D5A1 /* ViewController.m */,
-				04DED2EA1EEB89360073D5A1 /* Main.storyboard */,
-				04DED2ED1EEB89360073D5A1 /* Assets.xcassets */,
-				04DED2EF1EEB89360073D5A1 /* LaunchScreen.storyboard */,
-				04DED2F21EEB89360073D5A1 /* Info.plist */,
-				04DED2F31EEB89360073D5A1 /* main.m */,
-				04DED3171EEB90340073D5A1 /* PrefixHeader.pch */,
+				04DED3321EEB9DDC0073D5A1 /* Utils */,
+				04DED31C1EEB9B310073D5A1 /* Controller */,
+				04DED31A1EEB9B310073D5A1 /* Views */,
+				04DED31D1EEB9B310073D5A1 /* Model */,
+				04DED32B1EEB9D450073D5A1 /* Supporting Files */,
 			);
 			path = KH2017;
 			sourceTree = "<group>";
@@ -139,6 +134,99 @@
 				04DED30A1EEB89360073D5A1 /* Info.plist */,
 			);
 			path = KH2017UITests;
+			sourceTree = "<group>";
+		};
+		04DED31A1EEB9B310073D5A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04DED32E1EEB9DA90073D5A1 /* Home */,
+				04DED32F1EEB9DAF0073D5A1 /* Mine */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04DED31C1EEB9B310073D5A1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04DED32C1EEB9D900073D5A1 /* Home */,
+				04DED32D1EEB9D960073D5A1 /* Mine */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		04DED31D1EEB9B310073D5A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04DED3301EEB9DB60073D5A1 /* Home */,
+				04DED3311EEB9DBD0073D5A1 /* Mine */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04DED32B1EEB9D450073D5A1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04DED2E41EEB89360073D5A1 /* AppDelegate.h */,
+				04DED2E51EEB89360073D5A1 /* AppDelegate.m */,
+				04DED2E71EEB89360073D5A1 /* ViewController.h */,
+				04DED2E81EEB89360073D5A1 /* ViewController.m */,
+				04DED2EA1EEB89360073D5A1 /* Main.storyboard */,
+				04DED2ED1EEB89360073D5A1 /* Assets.xcassets */,
+				04DED2EF1EEB89360073D5A1 /* LaunchScreen.storyboard */,
+				04DED2F21EEB89360073D5A1 /* Info.plist */,
+				04DED2F31EEB89360073D5A1 /* main.m */,
+				04DED3171EEB90340073D5A1 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04DED32C1EEB9D900073D5A1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04DED32D1EEB9D960073D5A1 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		04DED32E1EEB9DA90073D5A1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04DED32F1EEB9DAF0073D5A1 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		04DED3301EEB9DB60073D5A1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04DED3311EEB9DBD0073D5A1 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		04DED3321EEB9DDC0073D5A1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		A3E8C294F213A349BB0F6547 /* Pods */ = {
