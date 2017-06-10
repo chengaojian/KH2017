@@ -15,6 +15,7 @@
 		04DED2F41EEB89360073D5A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED2F31EEB89360073D5A1 /* main.m */; };
 		04DED2FE1EEB89360073D5A1 /* KH2017Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED2FD1EEB89360073D5A1 /* KH2017Tests.m */; };
 		04DED3091EEB89360073D5A1 /* KH2017UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED3081EEB89360073D5A1 /* KH2017UITests.m */; };
+		1220CDF8013F1753C565EE6B /* libPods-KH2017.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 384AF816289C517D33956AAF /* libPods-KH2017.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		04DED3041EEB89360073D5A1 /* KH2017UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KH2017UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DED3081EEB89360073D5A1 /* KH2017UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KH2017UITests.m; sourceTree = "<group>"; };
 		04DED30A1EEB89360073D5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		384AF816289C517D33956AAF /* libPods-KH2017.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KH2017.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F82C09E63D7E4191F0AEE3B /* Pods-KH2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KH2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-KH2017/Pods-KH2017.release.xcconfig"; sourceTree = "<group>"; };
+		860423748FD9351A7E460C45 /* Pods-KH2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KH2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KH2017/Pods-KH2017.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1220CDF8013F1753C565EE6B /* libPods-KH2017.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				04DED2FC1EEB89360073D5A1 /* KH2017Tests */,
 				04DED3071EEB89360073D5A1 /* KH2017UITests */,
 				04DED2E21EEB89360073D5A1 /* Products */,
+				A3E8C294F213A349BB0F6547 /* Pods */,
+				EBDE76242C9A310BA50CBF1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +139,23 @@
 			path = KH2017UITests;
 			sourceTree = "<group>";
 		};
+		A3E8C294F213A349BB0F6547 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				860423748FD9351A7E460C45 /* Pods-KH2017.debug.xcconfig */,
+				5F82C09E63D7E4191F0AEE3B /* Pods-KH2017.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EBDE76242C9A310BA50CBF1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				384AF816289C517D33956AAF /* libPods-KH2017.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DED30D1EEB89360073D5A1 /* Build configuration list for PBXNativeTarget "KH2017" */;
 			buildPhases = (
+				E333ADBFC6B9012B14BF3B4F /* [CP] Check Pods Manifest.lock */,
 				04DED2DD1EEB89360073D5A1 /* Sources */,
 				04DED2DE1EEB89360073D5A1 /* Frameworks */,
 				04DED2DF1EEB89360073D5A1 /* Resources */,
+				0B50CE81ED5F34CDFE677635 /* [CP] Embed Pods Frameworks */,
+				6F8B7DE907E15E09BAFE6962 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -256,6 +283,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B50CE81ED5F34CDFE677635 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KH2017/Pods-KH2017-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F8B7DE907E15E09BAFE6962 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KH2017/Pods-KH2017-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E333ADBFC6B9012B14BF3B4F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04DED2DD1EEB89360073D5A1 /* Sources */ = {
@@ -421,6 +496,7 @@
 		};
 		04DED30E1EEB89360073D5A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 860423748FD9351A7E460C45 /* Pods-KH2017.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KH2017/Info.plist;
@@ -433,6 +509,7 @@
 		};
 		04DED30F1EEB89360073D5A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F82C09E63D7E4191F0AEE3B /* Pods-KH2017.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KH2017/Info.plist;
