@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04196AAE1EEBDD72005BDD16 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04196AAC1EEBDD72005BDD16 /* HomeCollectionViewCell.m */; };
+		04196AAF1EEBDD72005BDD16 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04196AAD1EEBDD72005BDD16 /* HomeCollectionViewCell.xib */; };
+		04196AB11EEBE130005BDD16 /* Xcode 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 04196AB01EEBE130005BDD16 /* Xcode 9.png */; };
+		043FBBEC1EEBC86C004FC788 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043FBBEB1EEBC86C004FC788 /* RootViewController.m */; };
+		043FBBEF1EEBCB41004FC788 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043FBBEE1EEBCB41004FC788 /* MineViewController.m */; };
 		04DED2E61EEB89360073D5A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED2E51EEB89360073D5A1 /* AppDelegate.m */; };
 		04DED2E91EEB89360073D5A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED2E81EEB89360073D5A1 /* ViewController.m */; };
 		04DED2EC1EEB89360073D5A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DED2EA1EEB89360073D5A1 /* Main.storyboard */; };
@@ -15,6 +20,8 @@
 		04DED2F41EEB89360073D5A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED2F31EEB89360073D5A1 /* main.m */; };
 		04DED2FE1EEB89360073D5A1 /* KH2017Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED2FD1EEB89360073D5A1 /* KH2017Tests.m */; };
 		04DED3091EEB89360073D5A1 /* KH2017UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED3081EEB89360073D5A1 /* KH2017UITests.m */; };
+		04F749221EEFE48F0075E6BD /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F749211EEFE48F0075E6BD /* HomeViewModel.m */; };
+		04FA85B91EEBAFF900574EF5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA85B81EEBAFF900574EF5 /* HomeViewController.m */; };
 		1220CDF8013F1753C565EE6B /* libPods-KH2017.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 384AF816289C517D33956AAF /* libPods-KH2017.a */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04196AAB1EEBDD72005BDD16 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
+		04196AAC1EEBDD72005BDD16 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
+		04196AAD1EEBDD72005BDD16 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		04196AB01EEBE130005BDD16 /* Xcode 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Xcode 9.png"; path = "../../Xcode 9.png"; sourceTree = "<group>"; };
+		043FBBEA1EEBC86C004FC788 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		043FBBEB1EEBC86C004FC788 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		043FBBED1EEBCB41004FC788 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		043FBBEE1EEBCB41004FC788 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		04DED2E11EEB89360073D5A1 /* KH2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KH2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DED2E41EEB89360073D5A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		04DED2E51EEB89360073D5A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +68,10 @@
 		04DED3081EEB89360073D5A1 /* KH2017UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KH2017UITests.m; sourceTree = "<group>"; };
 		04DED30A1EEB89360073D5A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DED3171EEB90340073D5A1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		04F749201EEFE48F0075E6BD /* HomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		04F749211EEFE48F0075E6BD /* HomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
+		04FA85B71EEBAFF900574EF5 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		04FA85B81EEBAFF900574EF5 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		384AF816289C517D33956AAF /* libPods-KH2017.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KH2017.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F82C09E63D7E4191F0AEE3B /* Pods-KH2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KH2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-KH2017/Pods-KH2017.release.xcconfig"; sourceTree = "<group>"; };
 		860423748FD9351A7E460C45 /* Pods-KH2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KH2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KH2017/Pods-KH2017.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +169,8 @@
 			children = (
 				04DED32C1EEB9D900073D5A1 /* Home */,
 				04DED32D1EEB9D960073D5A1 /* Mine */,
+				043FBBEA1EEBC86C004FC788 /* RootViewController.h */,
+				043FBBEB1EEBC86C004FC788 /* RootViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +187,7 @@
 		04DED32B1EEB9D450073D5A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04196AB01EEBE130005BDD16 /* Xcode 9.png */,
 				04DED2E41EEB89360073D5A1 /* AppDelegate.h */,
 				04DED2E51EEB89360073D5A1 /* AppDelegate.m */,
 				04DED2E71EEB89360073D5A1 /* ViewController.h */,
@@ -183,6 +205,8 @@
 		04DED32C1EEB9D900073D5A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04FA85B71EEBAFF900574EF5 /* HomeViewController.h */,
+				04FA85B81EEBAFF900574EF5 /* HomeViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -190,6 +214,8 @@
 		04DED32D1EEB9D960073D5A1 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				043FBBED1EEBCB41004FC788 /* MineViewController.h */,
+				043FBBEE1EEBCB41004FC788 /* MineViewController.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -197,6 +223,9 @@
 		04DED32E1EEB9DA90073D5A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04196AAB1EEBDD72005BDD16 /* HomeCollectionViewCell.h */,
+				04196AAC1EEBDD72005BDD16 /* HomeCollectionViewCell.m */,
+				04196AAD1EEBDD72005BDD16 /* HomeCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -211,6 +240,8 @@
 		04DED3301EEB9DB60073D5A1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				04F749201EEFE48F0075E6BD /* HomeViewModel.h */,
+				04F749211EEFE48F0075E6BD /* HomeViewModel.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -354,7 +385,9 @@
 			files = (
 				04DED2F11EEB89360073D5A1 /* LaunchScreen.storyboard in Resources */,
 				04DED2EE1EEB89360073D5A1 /* Assets.xcassets in Resources */,
+				04196AB11EEBE130005BDD16 /* Xcode 9.png in Resources */,
 				04DED2EC1EEB89360073D5A1 /* Main.storyboard in Resources */,
+				04196AAF1EEBDD72005BDD16 /* HomeCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +463,11 @@
 				04DED2E91EEB89360073D5A1 /* ViewController.m in Sources */,
 				04DED2F41EEB89360073D5A1 /* main.m in Sources */,
 				04DED2E61EEB89360073D5A1 /* AppDelegate.m in Sources */,
+				043FBBEF1EEBCB41004FC788 /* MineViewController.m in Sources */,
+				04196AAE1EEBDD72005BDD16 /* HomeCollectionViewCell.m in Sources */,
+				04FA85B91EEBAFF900574EF5 /* HomeViewController.m in Sources */,
+				043FBBEC1EEBC86C004FC788 /* RootViewController.m in Sources */,
+				04F749221EEFE48F0075E6BD /* HomeViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,8 +627,10 @@
 			baseConfigurationReference = 860423748FD9351A7E460C45 /* Pods-KH2017.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DRHND5XDSN;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KH2017/PrefixHeader.pch";
 				INFOPLIST_FILE = KH2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.sanhai.com.KH2017;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -603,8 +643,10 @@
 			baseConfigurationReference = 5F82C09E63D7E4191F0AEE3B /* Pods-KH2017.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DRHND5XDSN;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/KH2017/PrefixHeader.pch";
 				INFOPLIST_FILE = KH2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.sanhai.com.KH2017;
 				PRODUCT_NAME = "$(TARGET_NAME)";
