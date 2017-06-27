@@ -17,4 +17,7 @@
 // 当前屏幕高度
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
+#import "Utils.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 #endif /* PrefixHeader_pch */

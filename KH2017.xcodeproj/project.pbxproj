@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		04196AAE1EEBDD72005BDD16 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04196AAC1EEBDD72005BDD16 /* HomeCollectionViewCell.m */; };
 		04196AAF1EEBDD72005BDD16 /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04196AAD1EEBDD72005BDD16 /* HomeCollectionViewCell.xib */; };
-		04196AB11EEBE130005BDD16 /* Xcode 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 04196AB01EEBE130005BDD16 /* Xcode 9.png */; };
+		042644931EF3ADBE00707AF8 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 042644921EF3ADBE00707AF8 /* Response.m */; };
+		042644961EF3B11000707AF8 /* HttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 042644951EF3B11000707AF8 /* HttpRequest.m */; };
+		042E4A3B1F0231A6005BA5F4 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 042E4A3A1F0231A6005BA5F4 /* Utils.m */; };
 		043FBBEC1EEBC86C004FC788 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043FBBEB1EEBC86C004FC788 /* RootViewController.m */; };
 		043FBBEF1EEBCB41004FC788 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 043FBBEE1EEBCB41004FC788 /* MineViewController.m */; };
 		04DED2E61EEB89360073D5A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DED2E51EEB89360073D5A1 /* AppDelegate.m */; };
@@ -46,7 +48,12 @@
 		04196AAB1EEBDD72005BDD16 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
 		04196AAC1EEBDD72005BDD16 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
 		04196AAD1EEBDD72005BDD16 /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
-		04196AB01EEBE130005BDD16 /* Xcode 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Xcode 9.png"; path = "../../Xcode 9.png"; sourceTree = "<group>"; };
+		042644911EF3ADBE00707AF8 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		042644921EF3ADBE00707AF8 /* Response.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		042644941EF3B11000707AF8 /* HttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpRequest.h; sourceTree = "<group>"; };
+		042644951EF3B11000707AF8 /* HttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpRequest.m; sourceTree = "<group>"; };
+		042E4A391F0231A6005BA5F4 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		042E4A3A1F0231A6005BA5F4 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		043FBBEA1EEBC86C004FC788 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		043FBBEB1EEBC86C004FC788 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		043FBBED1EEBCB41004FC788 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -187,7 +194,6 @@
 		04DED32B1EEB9D450073D5A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				04196AB01EEBE130005BDD16 /* Xcode 9.png */,
 				04DED2E41EEB89360073D5A1 /* AppDelegate.h */,
 				04DED2E51EEB89360073D5A1 /* AppDelegate.m */,
 				04DED2E71EEB89360073D5A1 /* ViewController.h */,
@@ -256,6 +262,12 @@
 		04DED3321EEB9DDC0073D5A1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				042E4A391F0231A6005BA5F4 /* Utils.h */,
+				042E4A3A1F0231A6005BA5F4 /* Utils.m */,
+				042644911EF3ADBE00707AF8 /* Response.h */,
+				042644921EF3ADBE00707AF8 /* Response.m */,
+				042644941EF3B11000707AF8 /* HttpRequest.h */,
+				042644951EF3B11000707AF8 /* HttpRequest.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -385,7 +397,6 @@
 			files = (
 				04DED2F11EEB89360073D5A1 /* LaunchScreen.storyboard in Resources */,
 				04DED2EE1EEB89360073D5A1 /* Assets.xcassets in Resources */,
-				04196AB11EEBE130005BDD16 /* Xcode 9.png in Resources */,
 				04DED2EC1EEB89360073D5A1 /* Main.storyboard in Resources */,
 				04196AAF1EEBDD72005BDD16 /* HomeCollectionViewCell.xib in Resources */,
 			);
@@ -461,11 +472,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DED2E91EEB89360073D5A1 /* ViewController.m in Sources */,
+				042E4A3B1F0231A6005BA5F4 /* Utils.m in Sources */,
 				04DED2F41EEB89360073D5A1 /* main.m in Sources */,
 				04DED2E61EEB89360073D5A1 /* AppDelegate.m in Sources */,
+				042644961EF3B11000707AF8 /* HttpRequest.m in Sources */,
 				043FBBEF1EEBCB41004FC788 /* MineViewController.m in Sources */,
 				04196AAE1EEBDD72005BDD16 /* HomeCollectionViewCell.m in Sources */,
 				04FA85B91EEBAFF900574EF5 /* HomeViewController.m in Sources */,
+				042644931EF3ADBE00707AF8 /* Response.m in Sources */,
 				043FBBEC1EEBC86C004FC788 /* RootViewController.m in Sources */,
 				04F749221EEFE48F0075E6BD /* HomeViewModel.m in Sources */,
 			);

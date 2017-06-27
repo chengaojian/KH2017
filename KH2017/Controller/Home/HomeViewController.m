@@ -9,11 +9,17 @@
 #import "HomeViewController.h"
 #import "HomeCollectionViewCell.h"
 #import "HomeViewModel.h"
+#import <AFNetworking.h>
+#import <MJExtension/MJExtension.h>
+#import "Response.h"
+#import "HttpRequest.h"
+#import "SDCycleScrollView.h"
 
 @interface HomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *homeCollectionView;
 @property (nonatomic, strong) NSMutableArray *dataArr;
+@property (nonatomic, strong) NSMutableArray *imagesUrlArr;
 
 @end
 
@@ -24,66 +30,53 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    self.dataArr = [NSMutableArray array];
+    self.imagesUrlArr = [NSMutableArray array];
+    
     [self loadData];
-    [self setNav];
-    [self initCollectionView];
+    [self setupNav];
+    [self setupUI];
+    [self setupCollectionView];
     // Do any additional setup after loading the view.
-}
-
-- (NSMutableArray *)dataArr {
-   
-    if (!_dataArr) {
-        _dataArr = [NSMutableArray array];
-        HomeViewModel *model1 = [[HomeViewModel alloc]init];
-        model1.title = @"中华文化跟你什么关系";
-        model1.time = @"15804人观看";
-        model1.row = 0;
-        [_dataArr addObject:model1];
-        
-        HomeViewModel *model2 = [[HomeViewModel alloc]init];
-        model2.title = @"希腊语是如何影响英语的？";
-        model2.time = @"8259人观看";
-        model2.row = 1;
-        [_dataArr addObject:model2];
-        
-        HomeViewModel *model3 = [[HomeViewModel alloc]init];
-        model3.title = @"10个男生想让女生知道的事";
-        model3.time = @"110.5k人观看";
-        model3.row = 2;
-        [_dataArr addObject:model3];
-        
-        HomeViewModel *model4 = [[HomeViewModel alloc]init];
-        model4.title = @"如果这个世界没有吃......";
-        model4.time = @"1192人观看";
-        model4.row = 3;
-        [_dataArr addObject:model4];
-//        for (int i = 0; i < 4; i ++) {
-//            HomeViewModel *model = [[HomeViewModel alloc]init];
-//            model.title = [NSString stringWithFormat:@"今天是%d号",i + 1];
-//            model.time = [NSString stringWithFormat:@"2010-0%d-0%d",i + 1, i + 2];
-//            model.row = i;
-//            [_dataArr addObject:model];
-//        }
-    }
-    return _dataArr;
 }
 
 - (void)loadData {
     
+    
+    HttpRequest *httpRequest = [HttpRequest sharedRequest];
+    [httpRequest post:@"http://mapi.kehai.com/m/hwcourse/loadJzyList2.do?userIdentity=2&netType=1&currPage=1&subjectId=ignore&time=ignore&deviceId=776B697EC49E4F678F84598B6157E9A8&appId=stu_release&day=0&userId=51000001274023&token=eyJ1c2VySUQiOjUxMDAwMDAxMjc0MDIzLCJleHBpcmUiOjE1MDAxMTA4MDU0MzIsImlzc3VlVGltZSI6MTQ5NzUxODgwNTQzMiwic2lnbmF0dXJlIjoiMjRiYTg0NzZiYjE0NjMzNmIzMzU2ZTEwOGI2M2VjYjgiLCJkZXZpY2VJZCI6Ijc3NkI2OTdFQzQ5RTRGNjc4Rjg0NTk4QjYxNTdFOUE4In0=&isFirstLoading=0&appVersion=118&gradeId=1004&courseType=ignore&" params:nil success:^(Response *response) {
+        NSLog(@"%@",response);
+        if ([response.resCode isEqualToString:@"000"]) {
+            NSLog(@"请求成功！");
+            NSDictionary *responseDict = response.data;
+            for (NSDictionary *dict in responseDict[@"list"]) {
+                HomeViewModel *model = [HomeViewModel mj_objectWithKeyValues:dict];
+                [self.dataArr addObject:model];
+            }
+        }
+        [self.homeCollectionView reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
-- (void)setNav {
+- (void)setupNav {
     
 }
 
-- (void)initCollectionView {
+- (void)setupUI {
+    
+    
+}
+
+- (void)setupCollectionView {
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 50);
-//    layout.footerReferenceSize = CGSizeMake(SCREEN_WIDTH, 50);
+    layout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 250);
     layout.itemSize = CGSizeMake(SCREEN_WIDTH / 2 , SCREEN_WIDTH / 2 * 0.8 );
     layout.minimumLineSpacing = 10;
     layout.minimumInteritemSpacing = 0;
+    
     self.homeCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) collectionViewLayout:layout];
     self.homeCollectionView.delegate = self;
     self.homeCollectionView.dataSource = self;
@@ -100,37 +93,49 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
+    NSLog(@"%s---------",__func__);
     return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return 4;
+    NSLog(@"%s---------",__func__);
+    return self.dataArr.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSLog(@"%s---------",__func__);
     HomeCollectionViewCell *cell = (HomeCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"HomeCollectionViewCellID" forIndexPath:indexPath];
     [cell configWithHomeCollectonViewCell:self.dataArr[indexPath.row]];
     return cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%s---------",__func__);
     
-    UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HomeCollectionViewHeader" forIndexPath:indexPath];
-    
-    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 10, SCREEN_WIDTH, 30)];
-    title.text = @"编辑·精选";
-    title.font = [UIFont systemFontOfSize:18];
-    title.textAlignment = NSTextAlignmentCenter;
-    title.textColor = [UIColor colorWithRed:74/255.0 green:74/255.0 blue:74/255.0 alpha:1];
-    [headerView addSubview:title];
-    
-    UIView *underLine = [[UIView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH - 20) / 2, CGRectGetMaxY(title.frame) + 1, 20, 0.5)];
-    underLine.backgroundColor = [UIColor colorWithRed:72/255.0 green:72/255.0 blue:72/255.0 alpha:1];
-    [headerView addSubview:underLine];
-    
-    return headerView;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HomeCollectionViewHeader" forIndexPath:indexPath];
+        
+            SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200) delegate:nil placeholderImage:nil];
+            [self.imagesUrlArr addObject:@"http://r.kehai.com/file/loadImage/236863821380844480.r?userIdentity=2&deviceId=5A364A08126C422594E40C3F3C532C9B&userId=51000001274064&netType=1&appVersion=121&imgId=236863821380844480&appId=stu_release&token=eyJ1c2VySUQiOjUxMDAwMDAxMjc0MDY0LCJleHBpcmUiOjE1MDEwNjI0MjI4NzQsImlzc3VlVGltZSI6MTQ5ODQ3MDQyMjg3NCwic2lnbmF0dXJlIjoiMmFlZTQ2MGUyNGQ3M2U3ZWVhNWY0MDZjNDkxZTU3MjQiLCJkZXZpY2VJZCI6IjVBMzY0QTA4MTI2QzQyMjU5NEU0MEMzRjNDNTMyQzlCIn0=&"];
+            [self.imagesUrlArr addObject:@"http://r.kehai.com/file/loadImage/236863821380844480.r?userIdentity=2&deviceId=5A364A08126C422594E40C3F3C532C9B&userId=51000001274064&netType=1&appVersion=121&imgId=236863821380844480&appId=stu_release&token=eyJ1c2VySUQiOjUxMDAwMDAxMjc0MDY0LCJleHBpcmUiOjE1MDEwNjI0MjI4NzQsImlzc3VlVGltZSI6MTQ5ODQ3MDQyMjg3NCwic2lnbmF0dXJlIjoiMmFlZTQ2MGUyNGQ3M2U3ZWVhNWY0MDZjNDkxZTU3MjQiLCJkZXZpY2VJZCI6IjVBMzY0QTA4MTI2QzQyMjU5NEU0MEMzRjNDNTMyQzlCIn0=&"];
+            [self.imagesUrlArr addObject:@"http://r.kehai.com/file/loadImage/236863821380844480.r?userIdentity=2&deviceId=5A364A08126C422594E40C3F3C532C9B&userId=51000001274064&netType=1&appVersion=121&imgId=236863821380844480&appId=stu_release&token=eyJ1c2VySUQiOjUxMDAwMDAxMjc0MDY0LCJleHBpcmUiOjE1MDEwNjI0MjI4NzQsImlzc3VlVGltZSI6MTQ5ODQ3MDQyMjg3NCwic2lnbmF0dXJlIjoiMmFlZTQ2MGUyNGQ3M2U3ZWVhNWY0MDZjNDkxZTU3MjQiLCJkZXZpY2VJZCI6IjVBMzY0QTA4MTI2QzQyMjU5NEU0MEMzRjNDNTMyQzlCIn0=&"];
+            cycleScrollView.imageURLStringsGroup = self.imagesUrlArr;
+            [headerView addSubview:cycleScrollView];
+        
+        UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(0, 210, SCREEN_WIDTH, 30)];
+        title.text = @"编辑·精选";
+        title.font = [UIFont systemFontOfSize:18];
+        title.textAlignment = NSTextAlignmentCenter;
+        title.textColor = [UIColor colorWithRed:74/255.0 green:74/255.0 blue:74/255.0 alpha:1];
+        [headerView addSubview:title];
+        
+        UIView *underLine = [[UIView alloc]initWithFrame:CGRectMake((SCREEN_WIDTH - 20) / 2, CGRectGetMaxY(title.frame) + 1, 20, 0.5)];
+        underLine.backgroundColor = [UIColor colorWithRed:72/255.0 green:72/255.0 blue:72/255.0 alpha:1];
+        [headerView addSubview:underLine];
+        
+        return headerView;
+    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {
